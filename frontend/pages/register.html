@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ro'yxatdan o'tish | O'yinlar Platformasi</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="particles"></div>
+
+  <div class="auth-container">
+    <div class="auth-wrapper">
+      <div class="logo-section">
+        <div class="logo-icon">🎮</div>
+        <h1 class="logo-title">O'YINLAR</h1>
+        <p class="logo-subtitle">Gaming Platform</p>
+      </div>
+
+      <div class="auth-card animated-border">
+        <div class="auth-header">
+          <h2>Ro'yxatdan o'tish</h2>
+          <p>Yangi hisob yarating va o'ynashni boshlang</p>
+        </div>
+
+        <form id="registerForm" novalidate>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <div class="input-wrapper">
+              <span class="input-icon">👤</span>
+              <input
+                type="text"
+                id="username"
+                class="form-input"
+                placeholder="Username kiriting"
+                autocomplete="username"
+              >
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <div class="input-wrapper">
+              <span class="input-icon">✉</span>
+              <input
+                type="email"
+                id="email"
+                class="form-input"
+                placeholder="Email manzilingiz"
+                autocomplete="email"
+              >
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Parol</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
+              <input
+                type="password"
+                id="password"
+                class="form-input"
+                placeholder="Parol yarating (kamida 6 ta belgi)"
+                autocomplete="new-password"
+              >
+              <button type="button" class="toggle-password">◎</button>
+            </div>
+            <div class="password-strength">
+              <div class="strength-bar"></div>
+              <div class="strength-bar"></div>
+              <div class="strength-bar"></div>
+              <div class="strength-bar"></div>
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Parolni tasdiqlash</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
+              <input
+                type="password"
+                id="confirmPassword"
+                class="form-input"
+                placeholder="Parolni qaytadan kiriting"
+                autocomplete="new-password"
+              >
+              <button type="button" class="toggle-password">◎</button>
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <div class="checkbox-group">
+            <div class="custom-checkbox">
+              <span class="check-icon">✓</span>
+            </div>
+            <input type="hidden" name="terms" value="false">
+            <span class="checkbox-label">
+              <a href="#">Foydalanish shartlari</a> va <a href="#">Maxfiylik siyosatiga</a> roziman
+            </span>
+          </div>
+
+          <button type="submit" id="submitBtn" class="btn-primary">
+            <span class="btn-text">Ro'yxatdan o'tish</span>
+            <div class="spinner"></div>
+          </button>
+        </form>
+
+        <div class="divider">
+          <span>Yoki</span>
+        </div>
+
+        <div class="social-login">
+          <button class="social-btn" type="button">
+            <span>G</span>
+          </button>
+          <button class="social-btn" type="button">
+            <span>🎮</span>
+          </button>
+          <button class="social-btn" type="button">
+            <span>⚡</span>
+          </button>
+        </div>
+
+        <div class="auth-footer">
+          <p>Allaqachon hisobingiz bormi? <a href="login.html">Kirish</a></p>
+        </div>
+
+        <div class="glow-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/register.js"></script>
+</body>
+</html>

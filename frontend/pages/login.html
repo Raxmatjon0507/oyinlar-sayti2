@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tizimga kirish | O'yinlar Platformasi</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="particles"></div>
+
+  <div class="auth-container">
+    <div class="auth-wrapper">
+      <div class="logo-section">
+        <div class="logo-icon">🎮</div>
+        <h1 class="logo-title">O'YINLAR</h1>
+        <p class="logo-subtitle">Gaming Platform</p>
+      </div>
+
+      <div class="auth-card animated-border">
+        <div class="auth-header">
+          <h2>Tizimga kirish</h2>
+          <p>Hisobingizga kiring va o'ynashni davom ettiring</p>
+        </div>
+
+        <form id="loginForm" novalidate>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <div class="input-wrapper">
+              <span class="input-icon">✉</span>
+              <input
+                type="email"
+                id="email"
+                class="form-input"
+                placeholder="Email manzilingiz"
+                autocomplete="email"
+              >
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Parol</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
+              <input
+                type="password"
+                id="password"
+                class="form-input"
+                placeholder="Parolingizni kiriting"
+                autocomplete="current-password"
+              >
+              <button type="button" class="toggle-password">◎</button>
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <div class="checkbox-group">
+            <div class="custom-checkbox checked">
+              <span class="check-icon">✓</span>
+            </div>
+            <input type="hidden" name="remember" value="true">
+            <span class="checkbox-label">Meni eslab qolish</span>
+          </div>
+
+          <button type="submit" id="submitBtn" class="btn-primary">
+            <span class="btn-text">Kirish</span>
+            <div class="spinner"></div>
+          </button>
+        </form>
+
+        <div class="divider">
+          <span>Yoki</span>
+        </div>
+
+        <div class="social-login">
+          <button class="social-btn" type="button">
+            <span>G</span>
+          </button>
+          <button class="social-btn" type="button">
+            <span>🎮</span>
+          </button>
+          <button class="social-btn" type="button">
+            <span>⚡</span>
+          </button>
+        </div>
+
+        <div class="auth-footer">
+          <p>Hisobingiz yo'qmi? <a href="register.html">Ro'yxatdan o'ting</a></p>
+        </div>
+
+        <div class="glow-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>

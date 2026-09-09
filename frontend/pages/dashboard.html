@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O'yinlar Platformasi</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+  <div class="particles"></div>
+
+  <!-- HEADER -->
+  <header class="dash-header">
+    <div class="header-left">
+      <div class="header-logo" onclick="refreshDashboard()">
+        <div class="header-logo-icon">🎮</div>
+        <span class="header-logo-text">O'YINLAR</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <!-- MEHMON (guest) -->
+      <div class="header-auth-guest" id="headerGuest">
+        <button class="btn-nav" id="guestLoginBtn">Kirish</button>
+        <button class="btn-nav btn-nav-primary" id="guestRegisterBtn">Ro'yxatdan o'tish</button>
+      </div>
+      <!-- TIZIMGA KIRGAN (user) -->
+      <div class="header-auth-user" id="headerUser">
+        <div class="user-balance">
+          <span class="balance-icon">💰</span>
+          <span class="balance-value" id="userBalance">0</span>
+        </div>
+        <div class="user-profile">
+          <div class="user-avatar" id="userAvatar">?</div>
+          <span class="user-name" id="userName">Foydalanuvchi</span>
+        </div>
+        <button class="btn-logout" id="logoutBtn">
+          <span class="logout-icon">⏻</span>
+          <span class="logout-text">Chiqish</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-auth-guest" id="mobileGuest">
+      <button class="mobile-nav-btn" id="mobileGuestLogin">Kirish</button>
+      <button class="mobile-nav-btn mobile-nav-primary" id="mobileGuestRegister">Ro'yxatdan o'tish</button>
+    </div>
+    <div class="mobile-auth-user" id="mobileUser">
+      <div class="mobile-user-info">
+        <div class="user-avatar" id="mobileAvatar">?</div>
+        <span id="mobileUserName">Foydalanuvchi</span>
+      </div>
+      <button class="mobile-logout" id="mobileLogoutBtn">
+        <span class="logout-icon">⏻</span> Chiqish
+      </button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="dash-main">
+    <!-- WELCOME SECTION -->
+    <section class="welcome-section">
+      <div class="welcome-content">
+        <h1 class="welcome-title" id="welcomeTitle">
+          O'yinlar olamiga xush kelibsiz!
+        </h1>
+        <p class="welcome-subtitle" id="welcomeSubtitle">
+          O'z sevimli o'yiningizni tanlang va o'ynashni boshlang
+        </p>
+      </div>
+      <div class="welcome-stats">
+        <div class="stat-card">
+          <span class="stat-icon">🎮</span>
+          <span class="stat-number">1</span>
+          <span class="stat-label">O'yinlar</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">🏆</span>
+          <span class="stat-number">0</span>
+          <span class="stat-label">G'alabalar</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">💰</span>
+          <span class="stat-number" id="statBalance">—</span>
+          <span class="stat-label">Balans</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAMES SECTION -->
+    <section class="games-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="title-icon">🕹️</span>
+          O'yinlar Kutubxonasi
+        </h2>
+        <p class="section-subtitle">Eng yaxshi onlayn o'yinlarni o'ynang</p>
+      </div>
+
+      <div class="games-grid">
+        <!-- SUDOKU CARD -->
+        <div class="game-card" data-game="sudoku">
+          <div class="card-banner">
+            <div class="sudoku-visual">
+              <div class="sudoku-grid-mini">
+                <div class="sg-row">
+                  <span>5</span><span>3</span><span class="empty"> </span>
+                  <span>7</span><span class="empty"> </span><span class="empty"> </span>
+                  <span class="empty"> </span><span class="empty"> </span><span class="empty"> </span>
+                </div>
+                <div class="sg-row">
+                  <span>6</span><span class="empty"> </span><span class="empty"> </span>
+                  <span>1</span><span>9</span><span>5</span>
+                  <span class="empty"> </span><span class="empty"> </span><span class="empty"> </span>
+                </div>
+                <div class="sg-row">
+                  <span class="empty"> </span><span>9</span><span>8</span>
+                  <span class="empty"> </span><span class="empty"> </span><span class="empty"> </span>
+                  <span>6</span><span class="empty"> </span><span class="empty"> </span>
+                </div>
+                <div class="sg-row">
+                  <span>8</span><span class="empty"> </span><span class="empty"> </span>
+                  <span class="empty"> </span><span>6</span><span class="empty"> </span>
+                  <span class="empty"> </span><span class="empty"> </span><span>3</span>
+                </div>
+                <div class="sg-row">
+                  <span>4</span><span class="empty"> </span><span class="empty"> </span>
+                  <span>8</span><span class="empty"> </span><span>3</span>
+                  <span class="empty"> </span><span class="empty"> </span><span>1</span>
+                </div>
+                <div class="sg-row">
+                  <span>7</span><span class="empty"> </span><span class="empty"> </span>
+                  <span class="empty"> </span><span>2</span><span class="empty"> </span>
+                  <span class="empty"> </span><span class="empty"> </span><span>6</span>
+                </div>
+                <div class="sg-row">
+                  <span class="empty"> </span><span>6</span><span class="empty"> </span>
+                  <span class="empty"> </span><span class="empty"> </span><span class="empty"> </span>
+                  <span>2</span><span>8</span><span class="empty"> </span>
+                </div>
+                <div class="sg-row">
+                  <span class="empty"> </span><span class="empty"> </span><span class="empty"> </span>
+                  <span>4</span><span>1</span><span>9</span>
+                  <span class="empty"> </span><span class="empty"> </span><span>5</span>
+                </div>
+                <div class="sg-row">
+                  <span class="empty"> </span><span class="empty"> </span><span class="empty"> </span>
+                  <span class="empty"> </span><span class="empty"> </span><span class="empty"> </span>
+                  <span class="empty"> </span><span>7</span><span class="empty"> </span>
+                </div>
+              </div>
+              <div class="sudoku-glow"></div>
+            </div>
+            <div class="card-banner-overlay"></div>
+          </div>
+
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag tag-genre">Mantiqiy</span>
+              <span class="tag tag-type">Boshqotirma</span>
+            </div>
+            <h3 class="card-title">Sudoku</h3>
+            <p class="card-desc">
+              Aql va diqqatni jamlash uchun klassik sonlar boshqotirmasi.
+              O'z mantiqingizni sinab ko'ring!
+            </p>
+            <div class="card-footer">
+              <div class="card-rating">
+                <span class="stars">⭐️ ⭐️ ⭐️ ⭐️ ⭐️</span>
+                <span class="rating-value">4.8</span>
+                <span class="difficulty-badge">O'rtacha</span>
+              </div>
+              <button class="btn-play" onclick="playGame('sudoku')">
+                <span class="play-icon">▶</span>
+                <span class="play-text">O'ynash</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PLACEHOLDER CARDS -->
+        <div class="game-card card-locked">
+          <div class="card-banner banner-placeholder">
+            <div class="placeholder-content">
+              <span class="placeholder-icon">🚧</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag tag-soon">Tez orada</span>
+            </div>
+            <h3 class="card-title">Tetris</h3>
+            <p class="card-desc">Klassik bloklarni joylashtirish o'yini tez orada...</p>
+            <div class="card-footer">
+              <div class="card-rating">
+                <span class="difficulty-badge">Tayyorlanmoqda</span>
+              </div>
+              <button class="btn-play btn-disabled" disabled>
+                <span class="play-icon">🔒</span>
+                <span class="play-text">Tez orada</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-card card-locked">
+          <div class="card-banner banner-placeholder">
+            <div class="placeholder-content">
+              <span class="placeholder-icon">🚧</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-tags">
+              <span class="tag tag-soon">Tez orada</span>
+            </div>
+            <h3 class="card-title">Snake</h3>
+            <p class="card-desc">Klassik ilon o'yini tez orada...</p>
+            <div class="card-footer">
+              <div class="card-rating">
+                <span class="difficulty-badge">Tayyorlanmoqda</span>
+              </div>
+              <button class="btn-play btn-disabled" disabled>
+                <span class="play-icon">🔒</span>
+                <span class="play-text">Tez orada</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- AUTH MODAL -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Yopish">✕</button>
+
+      <div class="modal-logo">
+        <div class="modal-logo-icon">🎮</div>
+      </div>
+
+      <div class="modal-tabs">
+        <button class="modal-tab active" data-tab="login" id="tabLogin">Kirish</button>
+        <button class="modal-tab" data-tab="register" id="tabRegister">Ro'yxatdan o'tish</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-message">
+          O'yinni o'ynash uchun avval ro'yxatdan o'ting yoki tizimga kiring!
+        </p>
+
+        <!-- LOGIN FORM -->
+        <form id="modalLoginForm" class="modal-form active" novalidate>
+          <div class="form-group">
+            <label for="modalLoginEmail">Email</label>
+            <div class="input-wrapper">
+              <span class="input-icon">✉</span>
+              <input
+                type="email"
+                id="modalLoginEmail"
+                class="form-input"
+                placeholder="Email manzilingiz"
+                autocomplete="email"
+              >
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="modalLoginPassword">Parol</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
+              <input
+                type="password"
+                id="modalLoginPassword"
+                class="form-input"
+                placeholder="Parolingizni kiriting"
+                autocomplete="current-password"
+              >
+              <button type="button" class="toggle-password">◎</button>
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <button type="submit" class="btn-primary" id="modalLoginBtn">
+            <span class="btn-text">Tizimga kirish</span>
+            <div class="spinner"></div>
+          </button>
+        </form>
+
+        <!-- REGISTER FORM -->
+        <form id="modalRegisterForm" class="modal-form" novalidate>
+          <div class="form-group">
+            <label for="modalRegUsername">Username</label>
+            <div class="input-wrapper">
+              <span class="input-icon">👤</span>
+              <input
+                type="text"
+                id="modalRegUsername"
+                class="form-input"
+                placeholder="Username kiriting"
+                autocomplete="username"
+              >
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="modalRegEmail">Email</label>
+            <div class="input-wrapper">
+              <span class="input-icon">✉</span>
+              <input
+                type="email"
+                id="modalRegEmail"
+                class="form-input"
+                placeholder="Email manzilingiz"
+                autocomplete="email"
+              >
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="modalRegPassword">Parol</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
+              <input
+                type="password"
+                id="modalRegPassword"
+                class="form-input"
+                placeholder="Kamida 6 ta belgi"
+                autocomplete="new-password"
+              >
+              <button type="button" class="toggle-password">◎</button>
+            </div>
+            <div class="password-strength">
+              <div class="strength-bar"></div>
+              <div class="strength-bar"></div>
+              <div class="strength-bar"></div>
+              <div class="strength-bar"></div>
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="modalRegConfirm">Parolni tasdiqlash</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
+              <input
+                type="password"
+                id="modalRegConfirm"
+                class="form-input"
+                placeholder="Parolni qaytadan kiriting"
+                autocomplete="new-password"
+              >
+              <button type="button" class="toggle-password">◎</button>
+            </div>
+            <p class="error-message"></p>
+          </div>
+
+          <button type="submit" class="btn-primary" id="modalRegisterBtn">
+            <span class="btn-text">Ro'yxatdan o'tish</span>
+            <div class="spinner"></div>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/auth.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>
